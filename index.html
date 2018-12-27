@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Parsons Problems</title>
+        <!-- Don't touch these things -->
+        <link href="./utils/parsons.css" rel="stylesheet" />
+        <link href="./utils/lib/prettify.css" rel="stylesheet" />
+
+        <script src="./utils/lib/prettify.js"></script>
+        <script src="./utils/include.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./utils/parsonizer/text-box.js"></script>        
+    <style src="./utils/parsonizer/text-box.css"></style>        
+    </head>
+    <body>
+       
+
+
+        <!-- what you see -->
+        <div id="sortableTrash" class="sortable-code"></div>
+        <div id="sortable" class="sortable-code">
+        </div>
+        <div style="clear:both;"></div>
+        <p>
+            <a href="#" id="newInstanceLink">New instance</a>
+            <a href="#" id="feedbackLink">Get feedback</a>
+        </p>
+      
+        <div>
+          <textarea id="comments" placeholder="paste your code here and click the button to create a study challenge" class="common"></textarea>
+          <button id="parsonizer">parsonize your code</button> <br>
+            (the first and last lines need to be all the way to the left)
+        </div>
+        <br />
+        <div>
+            Or check out these challenges: <br />
+            <table>
+                <tr>
+                    <td>
+                        <a href="./examples-to-study/variables-and-types.html">Variables & Types</a>
+                    </td>
+                    <td>
+                        <a href="./examples-to-study/scope-and-control-flow.html">Scope & Control Flow</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+        <br />
+        <div>
+            <p> Powered by <a href="https://github.com/js-parsons/js-parsons" target="_blank">  js-parsons </p>
+        </div>
+
+        <!-- why it works -->
+        <script src="./utils/parsonizer/handler.js"></script>        
+        <script src="./utils/lib/jquery.min.js"></script>
+        <script src="./utils/lib/jquery-ui.min.js"></script>
+        <script src="./utils/lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="./utils/lib/underscore-min.js"></script>
+        <script src="./utils/lib/lis.js"></script>
+        <script src="./utils/parsons.js"></script>
+        <script src='./utils/index.js'></script>
+    </body>
+</html>
