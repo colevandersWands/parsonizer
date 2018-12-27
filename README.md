@@ -1,4 +1,4 @@
-# The [Parsonizer](https://elewa-academy.github.io/parsons/)
+# The [Parsonizer](https://colevanderswands.github.io/parsonizer/)
 
 With parsons problems you will be presented with a randomly organized set of lines of code.  Your task is simply to place them in order.  But it's not always as easy as it sounds!  Beware of indenting (code style) and extra lines.
 
