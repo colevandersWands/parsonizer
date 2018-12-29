@@ -2,9 +2,9 @@
 
 With parsons problems you will be presented with a randomly organized set of lines of code.  Your task is simply to place them in order.  But it's not always as easy as it sounds!  Beware of indenting (code style) and extra lines.
 
-When you find a particularly interesting example of JavaScript syntax, design pattern, solution strategy, step through it and provide a link in your JavaScript Reference.
+When you find a particularly interesting example of JavaScript syntax, design pattern, solution strategy, copy paste it into [this web page](https://colevanderswands.github.io/parsonizer/) to study it in depth as a parsons problem.
 
-Or create your own problems and challenge your friends!  Parsons problems are also a great way to practice syntax, logical strategies, and programming design patterns. 
+Parsons problems are a great way to practice syntax, logical strategies, and programming design patterns. 
 
 > Powered by [js-parsons](https://github.com/js-parsons/js-parsons) 
 
