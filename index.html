@@ -42,11 +42,19 @@
           </ul>
         </div>
         <hr>
-        <h4>examples to try</h4>
+        <h4>examples</h4>
         <div>
           <p>simple script -> drag them into the correct order</p>
           <pre class="prettyprint">
 const a = "1";
+const b = "2";
+const c = a + b;
+          </pre>
+        </div>
+        <div>
+          <p>careful! -> the parsonizer won't work if your first line is indented</p>
+          <pre class="prettyprint">
+  const a = "1";
 const b = "2";
 const c = a + b;
           </pre>
