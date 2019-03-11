@@ -1,13 +1,15 @@
 <!doctype html>
 <html>
     <head>
-        <title>Parsons Problems</title>
+        <title>Parsonizer</title>
         <!-- Don't touch these things -->
         <link href="./utils/parsons.css" rel="stylesheet" />
         <link href="./utils/lib/prettify.css" rel="stylesheet" />
 
         <script src="./utils/lib/prettify.js"></script>
         <script src="./utils/include.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./utils/parsonizer/text-box.js"></script>        
@@ -23,30 +25,79 @@
         </div>
         <div style="clear:both;"></div>
         <p>
-            <a href="#" id="newInstanceLink">New instance</a>
-            <a href="#" id="feedbackLink">Get feedback</a>
+            <button href="#" id="newInstanceLink">New instance</button>
+            <button href="#" id="feedbackLink">Get feedback</button>
         </p>
       
         <div>
-          <textarea rows="30" cols="90" id="comments" placeholder="paste your code here and click the (parsonize your code) button to create a study challenge" class="common"></textarea>
+          <textarea rows="15" cols="60" id="comments" placeholder="paste your code here and click the [parsonize your code] button to create a study challenge" class="common"></textarea>
           <br>
           <br>
           <button id="parsonizer">parsonize your code</button> 
           <br>
-          <br>
-            the first line needs to be all the way to the left <br>
-            you can add un-necessary lines by typing '#distractor' after them
+          <ul>
+            <li>paste your code above and click the [parsonize your code] button to create a study challenge </li>
+            <li>the first line needs to be all the way to the left </li>
+            <li>you can add un-necessary lines by typing '#distractor' after them </li>
+          </ul>
         </div>
-        <br />
-        <div>
-
-https://github.com/janke-learning/parsonizer/edit/master/index.html
-        </div>
-        <br />
         <hr>
+        <h4>examples to try</h4>
         <div>
-            <p> Powered by <a href="https://github.com/js-parsons/js-parsons" target="_blank">  js-parsons </p>
+          <p>simple script -> drag them into the correct order</p>
+          <pre class="prettyprint">
+const a = "1";
+const b = "2";
+const c = a + b;
+          </pre>
         </div>
+        <div>
+          <p>a basic if/else -> drop the indented lines at the correct depth</p>
+          <pre class="prettyprint">
+if (null) {
+  console.log('never');
+} else {
+  console.log('always');
+};
+          </pre>
+        </div>
+        <div>
+          <p>nested if's -> drop the doubly indented line twice as far in</p>
+          <pre class="prettyprint">
+if (true) {
+  if (false) {
+    console.log('never');
+  }; // inner
+}; // outer
+          </pre>
+        </div>
+        <div>
+          <p>for loop with return -> up the challenge by adding extra lines </p>
+          <pre class="prettyprint">
+for (let i = 0; i < 4; i++) {
+  i++;
+  return i; #distractor
+};
+          </pre>
+        </div>
+        <div>
+          <p>programming challenges -> practice the logic without the errors</p>
+          <pre class="prettyprint">
+function reverstring(str) {
+  const arrayed = str.split("");
+  const reversed = arrayed.reverse();
+  const re_stringed = reversed.join("");
+  return re_stringed;
+};
+          </pre>
+        </div>
+        <br/>
+        <hr>
+        <p> <a href="https://github.com/janke-learning/parsonizer">parsonizer source code</a>, powered by <a href="https://github.com/js-parsons/js-parsons" target="_blank">  js-parsons
+        <br>
+        <hr>  
+        <hr>  
+        <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>  
 
         <!-- why it works -->
         <script src="./utils/parsonizer/handler.js"></script>        
