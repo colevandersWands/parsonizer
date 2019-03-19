@@ -20,7 +20,7 @@ function load_challenge(challenge) {
 
 function generate_permalink() {
   var encoded_challenge;
-  if (current_challenge_encoded) {
+  if (!read_challenge_textarea()) {
     encoded_challenge = current_challenge_encoded;
   } else {
     current_challenge_decoded = read_challenge_textarea();
