@@ -12,8 +12,9 @@
         <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./utils/parsonizer/text-box.js"></script>        
-    <style src="./utils/parsonizer/text-box.css"></style>        
+        <script src="./utils/parsonizer/text-box.js"></script>        
+        <style src="./utils/parsonizer/text-box.css"></style>
+
     </head>
     <body>
        
@@ -30,13 +31,15 @@
         </p>
       
         <div>
-          <textarea rows="15" cols="60" id="comments" placeholder="paste your code here and click the [parsonize your code] button to create a study challenge" class="common"></textarea>
+          <textarea id="input-area" rows="15" cols="60" placeholder="paste your code here and click the [parsonize your code] button to create a study challenge" class="common"></textarea>
           <br>
           <br>
           <button id="parsonizer">parsonize your code</button> 
+          <button id="gen-perma" onclick="generate_permalink()">generate permalink:</button> 
+          <input id="display-perma"></input>
           <br>
           <ul>
-            <li>paste your code above and click the [parsonize your code] button to create a study challenge </li>
+            <li>paste your code in the textarea above and click the [parsonize your code] button to create a study challenge </li>
             <li>the first line needs to be all the way to the left </li>
             <li>you can add un-necessary lines by typing '#distractor' after them </li>
             <li>about parsons problems: <a target="_blank" href="https://computinged.wordpress.com/2017/11/17/parsons-problems-have-same-learning-gains-as-writing-or-fixing-code-in-less-time-koli-calling-2017-preview/">all of the learning, less of the time time</a>.
@@ -117,5 +120,8 @@ function reverstring(str) {
         <script src="./utils/lib/lis.js"></script>
         <script src="./utils/parsons.js"></script>
         <script src='./utils/index.js'></script>
+
+        <script src="./permalink-scripts.js"></script>
+        <script src="./init-from-permalink.js"></script>
     </body>
 </html>
