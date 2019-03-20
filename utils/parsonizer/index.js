@@ -5,20 +5,23 @@ function displayErrors(fb) {
 } 
 
 function init(initial){
-    var parson = new ParsonsWidget({
+    var parsonow = new ParsonsWidget({
         'sortableId': 'sortable',
         'trashId': 'sortableTrash',
-        'max_wrong_lines': 1,
-        'feedback_cb' : displayErrors
+        'feedback_cb' : displayErrors,
+        // 'max_wrong_lines': 1,
+        "first_error_only": true
     });
-    parson.init(initial);
-    parson.shuffleLines();
+    parsonow.init(initial);
+    parsonow.shuffleLines();
     $("#newInstanceLink").click(function(event){
         event.preventDefault();
-        parson.shuffleLines();
+        parsonow.shuffleLines();
     });
     $("#feedbackLink").click(function(event){
         event.preventDefault();
-        parson.getFeedback();
+        parsonow.getFeedback();
     });
+
+    return parsonow;
 };

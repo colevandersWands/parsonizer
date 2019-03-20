@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html>
     <head>
@@ -14,31 +13,31 @@
         <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="./utils/parsonizer/text-box.js"></script>        
-        <style src="./utils/parsonizer/text-box.css"></style>
 
+        <link href="./utils/guesses-history/modal.css" rel="stylesheet" />
+        <script src="./utils/guesses-history/scripts.js"></script>
+        <script src="./utils/guesses-history/global-vars.js"></script>
     </head>
     <body>
        
-
 
         <!-- what you see -->
         <div id="sortableTrash" class="sortable-code"></div>
         <div id="sortable" class="sortable-code">
         </div>
         <div style="clear:both;"></div>
-        <p>
-            <button href="#" id="newInstanceLink">New instance</button>
-            <button href="#" id="feedbackLink">Get feedback</button>
-        </p>
+        <p id="parsons-buttons"></p>
       
         <div>
           <textarea id="input-area" rows="15" cols="60" placeholder="paste your code here and click the [parsonize your code] button to create a study challenge" class="common"></textarea>
           <br>
           <br>
-          <button id="parsonizer">parsonize your code</button> 
+
+          <button id="parsonizer" onclick="init_modal(read_challenge_textarea());">parsonize your code</button> 
+
           <button id="gen-perma" onclick="generate_permalink()">generate permalink:</button> 
           <input id="display-perma"></input>
+
           <br>
           <ul>
             <li>paste your code in the textarea above and click the [parsonize your code] button to create a study challenge </li>
@@ -114,17 +113,52 @@ function reverstring(str) {
         <hr>  
         <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>  
 
-        <!-- why it works -->
-        <script src="./utils/parsonizer/handler.js"></script>        
+        <!-- begin guess history modal -->
+
+        <div id="guesses-history" style="display:none;">
+          <div style="padding-right: 5%; padding-left: 5%; padding-bottom: 5%;">
+            <div>
+              <pre id="the-answer" class="prettyprint">
+// no challenge loaded
+              </pre>  
+            </div>
+            <div >
+              <div id="the-guesses" style="height: 75vh; width: 100vh; overflow-y: auto">
+                no guesses yet 
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal" >
+          <div class="modal-inner" style="height: 100%; width: 100%;">
+            <a data-modal-close>X</a>
+            <div class="modal-content"></div>
+          </div>
+        </div>
+
+        <script src="./utils/guesses-history/modal.js"></script>
+        <script>var modal = new VanillaModal.default();</script>
+
+        <!-- end guess history modal -->
+
+        <!-- why it works -->      
         <script src="./utils/lib/jquery.min.js"></script>
         <script src="./utils/lib/jquery-ui.min.js"></script>
         <script src="./utils/lib/jquery.ui.touch-punch.min.js"></script>
         <script src="./utils/lib/underscore-min.js"></script>
         <script src="./utils/lib/lis.js"></script>
         <script src="./utils/parsons.js"></script>
-        <script src='./utils/index.js'></script>
 
-        <script src="./permalink-scripts.js"></script>
-        <script src="./init-from-permalink.js"></script>
+        <script src="./utils/parsonizer/text-box.js"></script>   
+        <script src='./utils/parsonizer/global-vars.js'></script>
+        <script src='./utils/parsonizer/index.js'></script>
+        <script src="./utils/parsonizer/handler.js"></script>  
+
+
+        <script src="./utils/permalinking/global-vars.js"></script>
+        <script src="./utils/permalinking/scripts.js"></script>
+        <script src="./utils/permalinking/init-from-permalink.js"></script>
     </body>
 </html>

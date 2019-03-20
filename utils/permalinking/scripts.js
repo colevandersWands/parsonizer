@@ -1,6 +1,3 @@
-var current_challenge_encoded = "";
-var current_challenge_decoded = "";
-
 function read_challenge_query() {
   var url_string = window.location.href;
   var url = new URL(url_string);
