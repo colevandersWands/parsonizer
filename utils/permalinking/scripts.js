@@ -37,7 +37,7 @@ function encode_challenge(string_challenge) {
 
   var encoded = encodeURIComponent(string_challenge);
   var sanitized = encoded.replace(/\(/g, '%28').replace(/\)/g, '%29');
-  return sanitized
+  return sanitized;
 };
 
 // sanitization from:  https://github.com/pgbovine/OnlinePythonTutor/blob/0dcdacc7ff5be504dd6a47236ebc69dc0069f991/v5-unity/js/opt-frontend.ts#L62
