@@ -31,7 +31,7 @@ function parsonizer_handler() {
 
     this_parson = init(code_to_parsonize);
 
-  current_challenge_decoded = code_to_parsonize;
+  current_challenge = code_to_parsonize;
   current_challenge_encoded = encode_challenge(code_to_parsonize);
 
     text_area.value = "";

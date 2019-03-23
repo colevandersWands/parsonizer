@@ -34,6 +34,7 @@ function encode_challenge(string_challenge) {
   };
   var coded_challenge = coded_chars.join("-");
   return coded_challenge;
+  // return encodeURIComponent(string_challenge);
 };
 
 
@@ -45,5 +46,6 @@ function decode_challenge(coded_challenge) {
   };
   var string_challenge = stringed_codes.join("");
   return string_challenge;
+  // return decodeURIComponent(string_challenge);
 };
 
