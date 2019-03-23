@@ -28,24 +28,33 @@ function display_permalink(url) {
 };
 
 function encode_challenge(string_challenge) {
-  var coded_chars = [];
-  for (var i = 0; i < string_challenge.length; i++) {
-    coded_chars.push(string_challenge.charCodeAt(i));
-  };
-  var coded_challenge = coded_chars.join("-");
-  return coded_challenge;
-  // return encodeURIComponent(string_challenge);
+  // var coded_chars = [];
+  // for (var i = 0; i < string_challenge.length; i++) {
+  //   coded_chars.push(string_challenge.charCodeAt(i));
+  // };
+  // var coded_challenge = coded_chars.join("-");
+  // return coded_challenge;
+
+  var encoded = encodeURIComponent(string_challenge);
+  var sanitized = encoded.replace(/\(/g, '%28').replace(/\)/g, '%29');
+  return sanitized
 };
 
+// sanitization from:  https://github.com/pgbovine/OnlinePythonTutor/blob/0dcdacc7ff5be504dd6a47236ebc69dc0069f991/v5-unity/js/opt-frontend.ts#L62
 
 function decode_challenge(coded_challenge) {
-  var arred_codes = coded_challenge.split("-");
-  var stringed_codes = [];
-  for (var i = 0; i < arred_codes.length; i++) {
-    stringed_codes.push(String.fromCharCode(arred_codes[i]));
-  };
-  var string_challenge = stringed_codes.join("");
-  return string_challenge;
-  // return decodeURIComponent(string_challenge);
+  // var arred_codes = coded_challenge.split("-");
+  // var stringed_codes = [];
+  // for (var i = 0; i < arred_codes.length; i++) {
+  //   stringed_codes.push(String.fromCharCode(arred_codes[i]));
+  // };
+  // var string_challenge = stringed_codes.join("");
+  // return string_challenge;
+
+  var decoded = decodeURIComponent(coded_challenge);
+  var desanitized = decoded.replace(/\%28/g, '(').replace(/\%29/g, ')');
+  return desanitized;
 };
+
+
 
