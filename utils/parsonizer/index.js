@@ -8,9 +8,8 @@ function init(initial){
     var parsonow = new ParsonsWidget({
         'sortableId': 'sortable',
         'trashId': 'sortableTrash',
-        'feedback_cb' : displayErrors,
-        // 'max_wrong_lines': 1,
-        "first_error_only": true
+        'max_wrong_lines': 1,
+        'feedback_cb' : true
     });
     parsonow.init(initial);
     parsonow.shuffleLines();
