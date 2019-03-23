@@ -1,7 +1,7 @@
 function read_challenge_query() {
   var url_string = window.location.href;
   var url = new URL(url_string);
-  var challenge_string = url.searchParams.get("challenge");
+  var challenge_string = url.searchParams.get("snippet");
   return challenge_string;
 };
 
@@ -15,18 +15,16 @@ function load_challenge(challenge) {
   input_area.value = challenge;
 };
 
-function generate_permalink() {
-  var encoded_challenge;
-  if (!read_challenge_textarea()) {
-    encoded_challenge = current_challenge_encoded;
-  } else {
-    current_challenge_decoded = read_challenge_textarea();
-    encoded_challenge = encode_challenge(current_challenge_decoded);
-    current_challenge_encoded = encode_challenge(current_challenge_decoded);
-  };
-  var permalink = "https://janke-learning.github.io/parsonizer/?challenge="+encoded_challenge;
+function generate_permalink(snippet, map, viztool) {
+
+  var encoded_snippet = map(snippet);
+  var permalink = "https://janke-learning.github.io/"+viztool+"/?snippet="+encoded_snippet;
+  return permalink;
+};
+
+function display_permalink(url) {
   var perma_display = document.getElementById("display-perma");
-  perma_display.value = permalink;
+  perma_display.value = url;
 };
 
 function encode_challenge(string_challenge) {
@@ -38,6 +36,7 @@ function encode_challenge(string_challenge) {
   return coded_challenge;
 };
 
+
 function decode_challenge(coded_challenge) {
   var arred_codes = coded_challenge.split("-");
   var stringed_codes = [];
@@ -47,3 +46,4 @@ function decode_challenge(coded_challenge) {
   var string_challenge = stringed_codes.join("");
   return string_challenge;
 };
+
