@@ -9,7 +9,7 @@ function init(initial){
         'sortableId': 'sortable',
         'trashId': 'sortableTrash',
         'max_wrong_lines': 1,
-        'feedback_cb' : true
+        'feedback_cb' : displayErrors
     });
     parsonow.init(initial);
     parsonow.shuffleLines();
