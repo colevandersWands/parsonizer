@@ -33,10 +33,11 @@
           <br>
 
           <button id="parsonizer" onclick="init_modal(read_challenge_textarea());">parsonize your code</button> 
-          <button id="gen-perma" onclick="current_challenge = current_challenge || read_challenge_textarea(); display_permalink(generate_permalink(current_challenge, encode_challenge, 'parsonizer'));">generate permalink:</button>
+          <button id="gen-perma" onclick="current_challenge = current_challenge || read_challenge_textarea(); var url = generate_permalink(current_challenge, encode_challenge, 'parsonizer'); display_permalink(url); copy_to_clipboard(url); alert('copied permalink')">generate permalink:</button>
           <input id="display-perma"></input><br>
           <button onclick="current_challenge = current_challenge || read_challenge_textarea(); open_in_pytut();">open in python tutor</button> 
           <button onclick="current_challenge = current_challenge || read_challenge_textarea(); open_in_flowviz();">open in flowviz</button> 
+          <button onclick="current_challenge = current_challenge || read_challenge_textarea(); copy_to_clipboard(current_challenge); alert('copied snippet')">copy snippet</button> 
 
 
           <br>
@@ -166,5 +167,7 @@ function reverstring(str) {
 
         <script src="./utils/open-in-flowviz.js"></script>
         <script src="./utils/open-in-pytut.js"></script>
+
+        <script src="./utils/copy.js"></script>
     </body>
 </html>
