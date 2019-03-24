@@ -1,7 +1,7 @@
 var query_challenge = read_challenge_query();
 
 if (query_challenge) {
-  current_challenge = decode_challenge(query_challenge);
+  // current_challenge = decode_challenge(query_challenge); // encoded uri's are automatically decoded
   load_challenge(current_challenge);
 };
 
