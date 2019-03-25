@@ -1,9 +1,3 @@
-function displayErrors(fb) {
-    if(fb.errors.length > 0) {
-        alert(fb.errors[0]);
-    }
-} 
-
 function init(initial){
     var parsonow = new ParsonsWidget({
         'sortableId': 'sortable',
@@ -23,4 +17,10 @@ function init(initial){
     });
 
     return parsonow;
+
+    function displayErrors(fb) {
+        if(fb.errors.length > 0) {
+            alert(fb.errors[0]);
+        }
+    } 
 };

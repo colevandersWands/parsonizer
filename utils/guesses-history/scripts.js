@@ -42,14 +42,14 @@ function update_modal() {
 };
 
 
-// could be done smoother now with access to this_parson?
+// could be done smoother now with access to parsons_instance?
 function save_guess() {
 
   var ul_guess = document.getElementById("ul-sortable");
   var copy_guess = ul_guess.cloneNode(true);
   copy_guess.style = "list-style-type: none;";
 
-  var is_correct = this_parson.grader.grade().success;
+  var is_correct = parsons_instance.grader.grade().success;
 
   guesses.push({guess: copy_guess, success: is_correct});
 
